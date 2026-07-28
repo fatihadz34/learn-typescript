@@ -10,3 +10,22 @@
  * 
  * display the book data using console.log.
  */
+
+type Book = {
+    ISBNNum: String
+    bookTitle: String
+    author: String
+    totalPages: number
+}
+
+const book:Book = {
+    ISBNNum: `978-602-8519-93-9`,
+    bookTitle: `Coconut Is Yummy`,
+    author: `Okka Adelard`,
+    totalPages: 45
+}
+
+console.log(`ISBN Number: ${book.ISBNNum}`)
+console.log(`Book Title: ${book.bookTitle}`)
+console.log(`Author: ${book.author}`)
+console.log(`Total Pages: ${book.totalPages}`)
