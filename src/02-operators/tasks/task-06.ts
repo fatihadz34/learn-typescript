@@ -13,3 +13,21 @@
  * - Discount amount
  * - Final payment
  */
+
+const ratePerHour : number = 8000
+const totalPlayingMinutes : number = (7 * 60) + 35
+const remainingMinutes : number = totalPlayingMinutes % 60
+
+const totalBilledHours : number = totalPlayingMinutes / 60
+const paymentBfrDisc : number = totalBilledHours * ratePerHour
+const discount : number = totalBilledHours > 5 ? paymentBfrDisc * 0.15 : 0
+const finalPayment : number = paymentBfrDisc - discount
+const discountApplied : boolean = discount > 0
+
+console.log(`Total Playing Time: ${totalPlayingMinutes} minutes`)
+console.log(`Remaining Minutes: ${remainingMinutes} minutes`)
+console.log(`Total Billed Hours: ${totalBilledHours} hours`)
+console.log(`Total Payment Before Discount: Rp${paymentBfrDisc}`)
+console.log(`Discount Amount: Rp${discount}`)
+console.log(`Final Payment: Rp${finalPayment}`)
+console.log(`Is Discount Applied: ${discountApplied}`)

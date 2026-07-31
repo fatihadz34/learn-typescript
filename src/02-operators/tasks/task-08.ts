@@ -24,3 +24,21 @@
  * - Final bill
  * - Green Energy Program eligibility
  */
+
+const prevMeter : number = 25640
+const currentMeter : number = 25892
+const pricePerkWh : number = 1650
+const isPanelHere : boolean = true
+const isEnergySaving : boolean = false
+
+const electUsage: number = currentMeter - prevMeter
+const discountPanel : number = isPanelHere ? electUsage * 0.2 : 0
+const savingDiscount : number = isEnergySaving ? electUsage * 0.05 : 0
+const totalDiscount : number = discountPanel + savingDiscount
+const finalBill : number = (electUsage - totalDiscount) * pricePerkWh
+const isGreenEnergy : boolean = isPanelHere && electUsage < 300 && isEnergySaving
+
+console.log(`Total energy consumption: ${electUsage} kWh`)
+console.log(`Electricity bill: Rp${electUsage * pricePerkWh}`)
+console.log(`Final bill after discounts: Rp${finalBill}`)
+console.log(`Eligible for Green Energy Program: ${isGreenEnergy}`)

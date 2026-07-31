@@ -17,3 +17,25 @@
  * - Bonus
  * - Final salary
  */
+
+type Employee = {
+  name: string;
+  basicSalary: number;
+  overtimeHours: number;
+  overtimeRate: number;
+};
+
+const siDimas: Employee = {
+  name: "Dimas",
+  basicSalary: 5000000,
+  overtimeHours: 12,
+  overtimeRate: 50000
+};
+
+const ovtPay : number = siDimas.overtimeHours * siDimas.overtimeRate
+const bonus : number = siDimas.overtimeHours > 10 ? ovtPay + 300000 : 0
+const finalsalary : number = bonus + siDimas.basicSalary
+
+console.log(`Overtime Pay: Rp${ovtPay}`)
+console.log(`Bonus: Rp${bonus}`)
+console.log(`Final Salary: Rp${finalsalary}`)
